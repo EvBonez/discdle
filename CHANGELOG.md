@@ -1,4 +1,4 @@
-## v1.2.2 - Daily mode powerup selection fix
+## v1.2.2 - Daily Mode Powerup Selection Fix
 
 - Fixed daily mode to allow picking 2 powerups (one after 2 misses, one after 4 misses) with seeded options for fairness
 

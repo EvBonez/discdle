@@ -379,11 +379,16 @@ const pickPowerupChoices = (existing = [], randomSource = Math.random) => {
     return powerup.rarity === 'rare' ? [powerup] : [powerup, powerup]
   })
 
-  const shuffled = [...weighted].sort(() => randomSource() - 0.5)
-  const selected = shuffled.slice(0, 2)
+  // Keep shuffling until we get 2 unique powerups
+  let uniqueIds = []
+  let attempts = 0
+  while (uniqueIds.length < 2 && attempts < 10) {
+    const shuffled = [...weighted].sort(() => randomSource() - 0.5)
+    const selected = shuffled.slice(0, 2)
+    uniqueIds = Array.from(new Set(selected.map((powerup) => powerup.id)))
+    attempts++
+  }
 
-  // Remove duplicates by id
-  const uniqueIds = Array.from(new Set(selected.map((powerup) => powerup.id)))
   return uniqueIds.slice(0, 2)
 }
 
