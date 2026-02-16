@@ -1,8 +1,8 @@
 ## v1.2.6 - Transition Timing Adjustments
 
-- Sped up logo and heading color transitions from 1.5s to 0.8s for better responsiveness
-- Adjusted background fade to 1.2s for more visible transitions
-- Fixed heading and logo to fade directly between colors without going through gray
+- Unified all color transitions to 0.6s for consistent, snappy mode switching
+- Fixed heading and logo to fade directly between colors without gray transition state
+- Background, logo, heading, and eyebrow text all transition at same speed
 
 ## v1.2.5 - Heading Gradient Fix
 
