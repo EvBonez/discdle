@@ -1,4 +1,4 @@
-## v1.0.0 - Mobile Optimization
+## v1.1.0 - Mobile Optimization
 
 - Added mobile-first responsive design with 3 breakpoints (1024px, 768px, 480px)
 - Made buttons and inputs touch-friendly with 44px minimum height
@@ -20,5 +20,5 @@
 - Hardcore mode with 60-second timer
 - Casual mode for unlimited play
 - Social sharing with emoji representation
-- GitHub Pages deployment configured
+- GitHub Pages deployment configured 
 
