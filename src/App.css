@@ -156,15 +156,23 @@ html.hardcore-theme .logo-mark {
 }
 
 html.daily-theme .header h1 span {
-  opacity: 1;
+  opacity: 0;
 }
 
 html.daily-theme .header h1::before {
   opacity: 1;
 }
 
+html.daily-theme .header h1::after {
+  opacity: 0;
+}
+
 html.hardcore-theme .header h1 span {
-  opacity: 1;
+  opacity: 0;
+}
+
+html.hardcore-theme .header h1::before {
+  opacity: 0;
 }
 
 html.hardcore-theme .header h1::after {
