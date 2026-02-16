@@ -1,5 +1,6 @@
 #root {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .app {
@@ -13,6 +14,8 @@
   color: #111827;
   animation: fade-in 0.6s ease-out;
   transition: color 0.6s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .app.random-mode {
@@ -404,6 +407,21 @@ select {
   background: #ffffff;
   font-size: 0.95rem;
   color: #111827;
+  min-height: 44px;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+select:hover {
+  border-color: #10b981;
+}
+
+select:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
 }
 
 select:disabled {
@@ -419,16 +437,33 @@ button {
   color: #ffffff;
   font-weight: 600;
   cursor: pointer;
+  min-height: 44px;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
 }
 
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  transform: none;
 }
 
 button.ghost {
   background: #e5e7eb;
   color: #111827;
+}
+
+button.ghost:hover {
+  background: #d1d5db;
 }
 
 .status {
@@ -581,12 +616,14 @@ html.hardcore-theme .already-played-banner p {
   width: 100%;
   display: grid;
   gap: 12px;
+  overflow-x: auto;
 }
 
 .grid-row {
   display: grid;
   grid-template-columns: repeat(7, minmax(90px, 1fr));
   gap: 8px;
+  min-width: min-content;
 }
 
 .grid-cell {
@@ -596,6 +633,13 @@ html.hardcore-theme .already-played-banner p {
   text-align: center;
   background: #ffffff;
   font-weight: 600;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-word;
+  font-size: 0.9rem;
+  line-height: 1.2;
 }
 
 .header-row .grid-cell {
@@ -604,6 +648,8 @@ html.hardcore-theme .already-played-banner p {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.7rem;
+  font-weight: 700;
+  min-height: 36px;
 }
 
 .grid-cell[data-status='exact'] {
@@ -900,22 +946,302 @@ html.hardcore-theme .already-played-banner p {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .app {
+    padding: 24px 16px 48px;
+    gap: 16px;
+  }
+
+  .controls {
+    gap: 12px;
+  }
+
+  .control {
+    min-width: 180px;
+  }
+
   .grid-row {
-    grid-template-columns: repeat(3, minmax(90px, 1fr));
+    grid-template-columns: repeat(7, minmax(70px, 1fr));
+    gap: 6px;
+  }
+
+  .grid-cell {
+    padding: 8px 6px;
+    font-size: 0.85rem;
+  }
+
+  .header-row .grid-cell {
+    font-size: 0.65rem;
+  }
+
+  .panel,
+  .hints {
+    padding: 16px;
+  }
+
+  .hint-choice-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .hint-choice {
+    padding: 12px 14px;
+  }
+
+  .modal {
+    max-width: 480px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .logo-mark {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logo-mark svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .mode-toggle {
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .mode-btn {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .control {
+    min-width: auto;
+  }
+
+  select,
+  button,
+  .hardcore-input-label input {
+    width: 100%;
+  }
+
+  .hardcore-timer {
+    min-width: auto;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .grid-row {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+
+  .grid-cell {
+    padding: 6px 4px;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .header-row .grid-cell {
+    font-size: 0.6rem;
+    min-height: 30px;
+  }
+
+  .grid-cell span {
+    font-size: 0.65rem;
+  }
+
+  .hint-choice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hint-choice {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hint-art {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .hint-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hint-title {
+    font-size: 0.95rem;
+  }
+
+  .hint-description {
+    font-size: 0.85rem;
+  }
+
+  .modal {
+    max-width: 90%;
+    padding: 16px;
+  }
+
+  .modal h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal p {
+    font-size: 0.95rem;
+  }
+
+  .share-preview pre {
+    font-size: 0.8rem;
+  }
+
+  .hardcore-rules {
+    padding: 12px 14px;
+    margin-top: 12px;
+  }
+
+  .hardcore-rules h3 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .hardcore-rules li {
+    font-size: 0.9rem;
+    margin: 6px 0;
+  }
+
+  .already-played-banner,
+  .casual-endgame-banner,
+  .hardcore-endgame-banner {
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+
+  .already-played-banner p,
+  .casual-endgame-banner p,
+  .hardcore-endgame-banner p {
+    font-size: 0.95rem;
+  }
+
+  .daily-countdown {
+    margin-top: 10px;
+  }
+
+  .countdown-timer {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 16px 12px 40px;
+    gap: 12px;
+  }
+
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .logo-mark {
+    width: 44px;
+    height: 44px;
+  }
+
+  .logo-mark svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mode-btn {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+
+  .mode-btn span {
+    font-size: 0.85rem;
+  }
+
+  .panel,
+  .hints {
+    padding: 12px;
+  }
+
+  .grid-row {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+  }
+
+  .grid-cell {
+    padding: 4px 2px;
+    font-size: 0.65rem;
+    min-height: 36px;
+    border-radius: 4px;
   }
 
   .header-row {
     display: none;
   }
-}
 
-@media (max-width: 700px) {
-  .title-row {
+  .control label {
+    font-size: 0.9rem;
+  }
+
+  select {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .hint-choice {
+    padding: 10px;
+  }
+
+  .hint-art {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hint-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .modal-actions {
     flex-direction: column;
+    gap: 10px;
   }
 
-  .header h1 {
-    font-size: 2rem;
+  .modal-actions button {
+    width: 100%;
+  }
+
+  .countdown-timer {
+    font-size: 1.8rem;
   }
 }
+
