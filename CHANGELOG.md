@@ -1,3 +1,9 @@
+## v1.2.7 - Daily Disc Timezone Fix
+
+- Fixed daily disc to change at 12 AM EST instead of 12 AM UTC
+- Now uses America/New_York timezone (EST/EDT) for consistent daily resets
+- Fixed mode button hover state to respect current theme colors (green/blue/red instead of always green)
+
 ## v1.2.6 - Transition Timing Adjustments
 
 - Unified all color transitions to 0.6s for consistent, snappy mode switching

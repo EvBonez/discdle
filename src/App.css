@@ -147,6 +147,16 @@ html.hardcore-theme .header h1 {
   color: #10b981;
 }
 
+html.daily-theme .mode-btn:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+html.hardcore-theme .mode-btn:hover {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
 .mode-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;

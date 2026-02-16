@@ -24,16 +24,25 @@ const createSeededRandom = (seed) => {
   }
 }
 
-// Get seeded random disc for the day (same for everyone)
+// Get seeded random disc for the day (same for everyone) - uses EST/EDT timezone
 const getDailyDisc = () => {
-  const today = new Date()
-  const dateStr = today.toISOString().split('T')[0] // YYYY-MM-DD
+  const now = new Date()
+  // Convert to EST by subtracting the offset between UTC and EST
+  const estDate = new Date(now.getTime() - (now.getTimezoneOffset() * 60000))
+  // Adjust to EST (UTC-5) or EDT (UTC-4) depending on daylight saving
+  const offset = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })
+  const estTime = new Date(offset)
+  const dateStr = estTime.toISOString().split('T')[0] // YYYY-MM-DD in EST
   const seed = parseInt(dateStr.replace(/-/g, ''), 10)
   const index = seed % DISCS.length
   return DISCS[index]
 }
 
-const getDailyKey = () => new Date().toISOString().split('T')[0]
+const getDailyKey = () => {
+  const offset = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })
+  const estTime = new Date(offset)
+  return estTime.toISOString().split('T')[0]
+}
 
 const pickRandomDisc = () => DISCS[Math.floor(Math.random() * DISCS.length)]
 
