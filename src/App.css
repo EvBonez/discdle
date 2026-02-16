@@ -51,7 +51,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 24px rgba(16, 185, 129, 0.25);
-  transition: box-shadow 1.5s ease;
+  transition: box-shadow 0.8s ease;
   position: relative;
 }
 
@@ -61,7 +61,7 @@
   position: absolute;
   inset: 0;
   border-radius: 16px;
-  transition: opacity 1.5s ease;
+  transition: opacity 0.8s ease;
 }
 
 .logo-mark::before {
@@ -125,7 +125,7 @@ html.hardcore-theme .logo-mark {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  transition: opacity 1.5s ease;
+  transition: opacity 0.8s ease;
 }
 
 .header h1::before {
@@ -140,7 +140,7 @@ html.hardcore-theme .logo-mark {
   background-clip: text;
   color: transparent;
   opacity: 0;
-  transition: opacity 1.5s ease;
+  transition: opacity 0.8s ease;
   pointer-events: none;
 }
 
@@ -156,7 +156,7 @@ html.hardcore-theme .logo-mark {
   background-clip: text;
   color: transparent;
   opacity: 0;
-  transition: opacity 1.5s ease;
+  transition: opacity 0.8s ease;
   pointer-events: none;
 }
 

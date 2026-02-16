@@ -1,3 +1,8 @@
+## v1.2.6 - Transition Timing Adjustments
+
+- Sped up logo and heading color transitions from 1.5s to 0.8s for better responsiveness
+- Adjusted background fade to 1.2s for more visible transitions
+
 ## v1.2.5 - Heading Gradient Fix
 
 - Fixed "Guess the disc" heading displaying gradient rectangle instead of text
