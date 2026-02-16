@@ -79,7 +79,7 @@ html.hardcore-theme .logo-mark {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  transition: background 0.6s ease;
+  transition: all 1.2s ease;
 }
 
 html.daily-theme .header h1 {
