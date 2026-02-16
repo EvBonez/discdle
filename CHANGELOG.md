@@ -3,6 +3,7 @@
 - Unified all color transitions to 0.6s for consistent, snappy mode switching
 - Fixed heading and logo to fade directly between colors without gray transition state
 - Background, logo, heading, and eyebrow text all transition at same speed
+- Removed gradient from header text
 
 ## v1.2.5 - Heading Gradient Fix
 
