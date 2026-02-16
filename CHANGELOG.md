@@ -1,3 +1,9 @@
+## v1.2.5 - Heading Gradient Fix
+
+- Fixed "Guess the disc" heading displaying gradient rectangle instead of text
+- Text now properly visible with smooth color transitions between modes
+- Slowed background fade transition to 1.5s to match logo and heading transitions
+
 ## v1.2.4 - UI Improvements & Favicon
 
 - Fixed casual mode button to display green instead of blue

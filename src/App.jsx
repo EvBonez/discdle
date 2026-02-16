@@ -750,7 +750,7 @@ function App() {
           </span>
           <div>
             <p className="eyebrow">Discdle{gameMode === 'daily' ? ' Daily' : gameMode === 'hardcore' ? ' Hardcore' : ''}</p>
-            <h1>Guess the disc</h1>
+            <h1 data-text="Guess the disc"><span>Guess the disc</span></h1>
           </div>
         </div>
         <div className="mode-toggle">

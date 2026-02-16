@@ -117,50 +117,58 @@ html.hardcore-theme .logo-mark {
   margin: 0;
   font-size: 2.4rem;
   position: relative;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  transition: none;
+  display: inline-block;
 }
 
-.header h1::before,
-.header h1::after {
-  content: 'Guess the disc';
+.header h1 span {
+  background: linear-gradient(120deg, #111827 10%, #10b981 55%, #059669 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: opacity 1.5s ease;
+}
+
+.header h1::before {
+  content: attr(data-text);
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-clip: text;
+  background: linear-gradient(120deg, #111827 10%, #3b82f6 55%, #1e40af 90%);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
+  opacity: 0;
   transition: opacity 1.5s ease;
   pointer-events: none;
 }
 
-.header h1::before {
-  background: linear-gradient(120deg, #111827 10%, #3b82f6 55%, #1e40af 90%);
-  opacity: 0;
-}
-
 .header h1::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(120deg, #111827 10%, #dc2626 55%, #991b1b 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   opacity: 0;
+  transition: opacity 1.5s ease;
+  pointer-events: none;
 }
 
-.header h1 {
-  background: linear-gradient(120deg, #111827 10%, #10b981 55%, #059669 90%);
+html.daily-theme .header h1 span {
+  opacity: 0;
 }
 
 html.daily-theme .header h1::before {
   opacity: 1;
 }
 
-html.daily-theme .header h1::after {
-  opacity: 0;
-}
-
-html.hardcore-theme .header h1::before {
+html.hardcore-theme .header h1 span {
   opacity: 0;
 }
 
