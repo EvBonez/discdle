@@ -1,6 +1,5 @@
 ## v1.2.3 - UI Polish & Bug Fixes
 
-- Fixed powerup selection bug where only 1 option displayed instead of 2
 - Casual mode "Discdle" text now displays in green to match mode colors
 - Added footer with EvBonez property disclaimer
 - Slowed logo color transition to 1.2s for more visible mode-switching effect
