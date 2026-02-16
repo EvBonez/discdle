@@ -1,7 +1,13 @@
-## v1.2.1 - Powerup Display Fix
+## v1.2.2 - Daily mode powerup selection fix
+
+- Fixed daily mode to allow picking 2 powerups (one after 2 misses, one after 4 misses) with seeded options for fairness
+
+
+## v1.2.1 - Powerup Display Fixes
 
 - Fixed Scanner powerups (Turn, Speed, Glide, Fade) only displaying values when powerup is active
 - Values now conditionally show in dropdown based on powerup state
+- Daily mode now allows picking 2 powerups (one after 2 misses, one after 4 misses) with seeded options for fairness
 
 ## v1.2.0 - Mobile UI Fixes, Powerup Fixes
 

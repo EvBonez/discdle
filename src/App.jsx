@@ -539,7 +539,8 @@ function App() {
     if (nextMisses >= 2 && powerupChoicesFirst.length === 0) {
       if (gameMode === 'daily') {
         const seed = hashString(`${getDailyKey()}-powerups-first`)
-        setPowerupChoicesFirst(pickPowerupChoices([], createSeededRandom(seed)))
+        const choices = pickPowerupChoices([], createSeededRandom(seed))
+        setPowerupChoicesFirst(choices)
       } else {
         setPowerupChoicesFirst(pickPowerupChoices())
       }
@@ -549,7 +550,8 @@ function App() {
       if (gameMode === 'daily') {
         const chosenKey = [...chosenPowerupIds].sort().join(',')
         const seed = hashString(`${getDailyKey()}-powerups-second-${chosenKey}`)
-        setPowerupChoicesSecond(pickPowerupChoices(chosenPowerupIds, createSeededRandom(seed)))
+        const choices = pickPowerupChoices(chosenPowerupIds, createSeededRandom(seed))
+        setPowerupChoicesSecond(choices)
       } else {
         setPowerupChoicesSecond(pickPowerupChoices(chosenPowerupIds))
       }
