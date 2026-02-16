@@ -1,6 +1,13 @@
+## v1.2.3 - UI Polish & Bug Fixes
+
+- Fixed powerup selection bug where only 1 option displayed instead of 2
+- Casual mode "Discdle" text now displays in green to match mode colors
+- Added footer with EvBonez property disclaimer
+- Slowed logo color transition to 1.2s for more visible mode-switching effect
+
 ## v1.2.2 - Powerup Selection Fix
 
-- Fixed not allowing picking 2 powerups
+- Fixed not allowing picking 2 powerups if the same powerup was rolled into twice
 
 
 ## v1.2.1 - Powerup Display Fixes
