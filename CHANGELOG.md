@@ -1,3 +1,9 @@
+## v1.2.4 - UI Improvements & Favicon
+
+- Fixed casual mode button to display green instead of blue
+- Improved logo and heading color transitions with smooth opacity-based fading (1.5s)
+- Added blue logo favicon for browser tab
+
 ## v1.2.3 - UI Polish & Bug Fixes
 
 - Fixed powerup selection bug where only 1 option displayed instead of 2

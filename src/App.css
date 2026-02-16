@@ -41,21 +41,60 @@
   width: 52px;
   height: 52px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #10b981, #059669);
+  background:
+    linear-gradient(135deg, #10b981, #059669),
+    linear-gradient(135deg, #3b82f6, #1e40af),
+    linear-gradient(135deg, #dc2626, #991b1b);
+  background-size: 100% 100%;
+  background-position: 0 0, 0 0, 0 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 24px rgba(16, 185, 129, 0.25);
-  transition: background 1.2s ease, box-shadow 1.2s ease;
+  transition: box-shadow 1.5s ease;
+  position: relative;
+}
+
+.logo-mark::before,
+.logo-mark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  transition: opacity 1.5s ease;
+}
+
+.logo-mark::before {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  opacity: 0;
+}
+
+.logo-mark::after {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  opacity: 0;
+}
+
+html.daily-theme .logo-mark::before {
+  opacity: 1;
+}
+
+html.daily-theme .logo-mark::after {
+  opacity: 0;
+}
+
+html.hardcore-theme .logo-mark::before {
+  opacity: 0;
+}
+
+html.hardcore-theme .logo-mark::after {
+  opacity: 1;
 }
 
 html.daily-theme .logo-mark {
-  background: linear-gradient(135deg, #3b82f6, #1e40af);
   box-shadow: 0 10px 28px rgba(59, 130, 246, 0.35);
 }
 
 html.hardcore-theme .logo-mark {
-  background: linear-gradient(135deg, #dc2626, #991b1b);
   box-shadow: 0 10px 28px rgba(220, 38, 38, 0.35);
 }
 
@@ -65,6 +104,8 @@ html.hardcore-theme .logo-mark {
   stroke: #ffffff;
   stroke-width: 2.5;
   fill: none;
+  position: relative;
+  z-index: 1;
 }
 
 .logo-mark svg circle {
@@ -75,25 +116,56 @@ html.hardcore-theme .logo-mark {
 .header h1 {
   margin: 0;
   font-size: 2.4rem;
-  background: linear-gradient(120deg, #111827 10%, #10b981 55%, #059669 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
+  position: relative;
   color: transparent;
-  transition: all 1.2s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: none;
 }
 
-html.daily-theme .header h1 {
+.header h1::before,
+.header h1::after {
+  content: 'Guess the disc';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: opacity 1.5s ease;
+  pointer-events: none;
+}
+
+.header h1::before {
   background: linear-gradient(120deg, #111827 10%, #3b82f6 55%, #1e40af 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  opacity: 0;
 }
 
-html.hardcore-theme .header h1 {
+.header h1::after {
   background: linear-gradient(120deg, #111827 10%, #dc2626 55%, #991b1b 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  opacity: 0;
+}
+
+.header h1 {
+  background: linear-gradient(120deg, #111827 10%, #10b981 55%, #059669 90%);
+}
+
+html.daily-theme .header h1::before {
+  opacity: 1;
+}
+
+html.daily-theme .header h1::after {
+  opacity: 0;
+}
+
+html.hardcore-theme .header h1::before {
+  opacity: 0;
+}
+
+html.hardcore-theme .header h1::after {
+  opacity: 1;
 }
 
 .mode-toggle {
@@ -128,10 +200,15 @@ html.hardcore-theme .header h1 {
 }
 
 .mode-btn.active {
-  background: #3b82f6;
-  border-color: #3b82f6;
+  background: #10b981;
+  border-color: #10b981;
   color: #ffffff;
   transition: all 0.3s ease;
+}
+
+html.daily-theme .mode-btn.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
 }
 
 html.hardcore-theme .mode-btn.active {
