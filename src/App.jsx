@@ -834,11 +834,18 @@ function App() {
                   disabled={!brand || isGameOver}
                 >
                   <option value="">Select a disc</option>
-                  {discsForBrand.map((disc) => (
-                    <option key={disc.id} value={disc.id}>
-                      {disc.name} - Turn: {disc.turn}
-                    </option>
-                  ))}
+                  {discsForBrand.map((disc) => {
+                    let label = disc.name
+                    if (revealNumericStats.has('turn')) label += ` - Turn: ${disc.turn}`
+                    if (revealNumericStats.has('speed')) label += ` - Speed: ${disc.speed}`
+                    if (revealNumericStats.has('glide')) label += ` - Glide: ${disc.glide}`
+                    if (revealNumericStats.has('fade')) label += ` - Fade: ${disc.fade}`
+                    return (
+                      <option key={disc.id} value={disc.id}>
+                        {label}
+                      </option>
+                    )
+                  })}
                 </select>
               </label>
             </>

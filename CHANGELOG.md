@@ -1,3 +1,8 @@
+## v1.2.1 - Powerup Display Fix
+
+- Fixed Scanner powerups (Turn, Speed, Glide, Fade) only displaying values when powerup is active
+- Values now conditionally show in dropdown based on powerup state
+
 ## v1.2.0 - Mobile UI Fixes, Powerup Fixes
 
 - Removed autoFocus from hardcore mode text input to prevent keyboard auto-opening on mobile devices
