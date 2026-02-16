@@ -116,7 +116,7 @@ html.hardcore-theme .logo-mark {
 }
 
 .header h1 span {
-  background: linear-gradient(120deg, #10b981, #059669);
+  background: #10b981;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -130,7 +130,7 @@ html.hardcore-theme .logo-mark {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg, #3b82f6, #1e40af);
+  background: #3b82f6;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -146,7 +146,7 @@ html.hardcore-theme .logo-mark {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg, #dc2626, #991b1b);
+  background: #dc2626;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
