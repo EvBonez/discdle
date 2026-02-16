@@ -1,3 +1,12 @@
+## v1.2.0 - Mobile UI Fixes, Powerup Fixes
+
+- Removed autoFocus from hardcore mode text input to prevent keyboard auto-opening on mobile devices
+
+
+- Fixed Turn Scanner and other numeric reveal powerups not displaying values in dropdown options
+- Added "Turn: x" display to all disc options in dropdown selector
+- Speed/Glide/Fade Scanner powerups now properly show their values when activated
+
 ## v1.1.0 - Mobile Optimization
 
 - Added mobile-first responsive design with 3 breakpoints (1024px, 768px, 480px)
@@ -20,5 +29,6 @@
 - Hardcore mode with 60-second timer
 - Casual mode for unlimited play
 - Social sharing with emoji representation
-- GitHub Pages deployment configured 
+- GitHub Pages deployment configured
+
 

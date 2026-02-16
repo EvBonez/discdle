@@ -795,7 +795,6 @@ function App() {
                   onChange={(event) => setGuessText(event.target.value)}
                   placeholder="e.g., Innova Aviar"
                   disabled={isGameOver}
-                  autoFocus
                   spellCheck="false"
                   autoComplete="off"
                 />
@@ -837,7 +836,7 @@ function App() {
                   <option value="">Select a disc</option>
                   {discsForBrand.map((disc) => (
                     <option key={disc.id} value={disc.id}>
-                      {disc.name}
+                      {disc.name} - Turn: {disc.turn}
                     </option>
                   ))}
                 </select>
