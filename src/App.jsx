@@ -408,14 +408,17 @@ const FEEDBACK_EMOJI = {
   lower: '🟨',
 }
 
-const buildShareText = (guesses, isWin, answer, revealStats) => {
+const buildShareText = (guesses, isWin, answer, revealStats, gameMode) => {
   if (guesses.length === 0) return ''
   const score = isWin ? guesses.length : 'X'
   const rows = guesses.map((guess) =>
     STATS.map((stat) => FEEDBACK_EMOJI[getCellStatus(guess, stat, answer, revealStats, false, false)]).join(''),
   )
 
-  return `Discdle ${score}/${MAX_GUESSES}\n${rows.join('\n')}`
+  const modeEmoji = gameMode === 'hardcore' ? '💀' : gameMode === 'daily' ? '📅' : '🎲'
+  const modeName = gameMode === 'hardcore' ? 'Hardcore' : gameMode === 'daily' ? 'Daily' : 'Casual'
+
+  return `Discdle ${modeEmoji} ${modeName} ${score}/${MAX_GUESSES}\n${rows.join('\n')}\n\nTry the daily Discdle at evbonez.github.io/discdle`
 }
 
 const getCellStatus = (guess, stat, answer, revealStats, isCurrentGuess = false, hasNextGuessAllNumbers = false) => {
@@ -505,8 +508,8 @@ function App() {
   const revealNumericStats = powerupRevealState.numericStats
   const nextGuessAllNumbers = powerupRevealState.hasNextGuessAllNumbers
   const shareText = useMemo(
-    () => buildShareText(guesses, isWin, answer, revealStats),
-    [answer, guesses, isWin, revealStats],
+    () => buildShareText(guesses, isWin, answer, revealStats, gameMode),
+    [answer, guesses, isWin, revealStats, gameMode],
   )
 
   const firstPowerupOptions = useMemo(
@@ -973,8 +976,8 @@ function App() {
         </div>
 
         {guesses.map((guess, guessIndex) => {
-          // Full Scan applies to guesses AFTER it was selected
-          const shouldApplyFullScan = fullScanUsedGuessCount >= 0 && guessIndex > fullScanUsedGuessCount
+          // Full Scan applies only to the immediate next guess after it was selected
+          const shouldApplyFullScan = fullScanUsedGuessCount >= 0 && guessIndex === fullScanUsedGuessCount + 1
           return (
             <div key={`${guess.id}-${guessIndex}`} className="grid-row">
               {STATS.map((stat) => {

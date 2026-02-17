@@ -1,3 +1,9 @@
+## v1.3.0 - Share Improvements & Full Scan Fix
+
+- Added clickable site link to shared results (evbonez.github.io/discdle)
+- Shared emoji grid now displays game mode played (🎲 Casual, 📅 Daily, 💀 Hardcore)
+- Fixed Full Scan powerup to only reveal numbers on the immediate next guess (not all subsequent guesses)
+
 ## v1.2.8 - Mode Button Text Visibility Fix
 
 - Fixed Daily and Hardcore mode buttons to display white text when selected (previously disappeared against colored background)
@@ -56,8 +62,11 @@
 - Hide header row on small phones to save space
 - Removed autoFocus from hardcore mode text input to prevent keyboard auto-opening on mobile
 
-## v1.1.0 - Initial Release
+## v1.1.0 - Initial Patch
 
+- Many Bugfixes and UI Overhauls
+
+## v1.0.0 - Initial Release
 - Core gameplay with brand/disc selection
 - Guess feedback system
 - Powerup system with rare powerups
