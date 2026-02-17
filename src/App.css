@@ -174,11 +174,13 @@ html.hardcore-theme .mode-btn:hover {
 html.daily-theme .mode-btn.active {
   background: #3b82f6;
   border-color: #3b82f6;
+  color: #ffffff;
 }
 
 html.hardcore-theme .mode-btn.active {
   background: #dc2626;
   border-color: #dc2626;
+  color: #ffffff;
 }
 
 .hardcore-toggle {

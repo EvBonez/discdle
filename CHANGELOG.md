@@ -1,3 +1,8 @@
+## v1.2.8 - Mode Button Text Visibility Fix
+
+- Fixed Daily and Hardcore mode buttons to display white text when selected (previously disappeared against colored background)
+- All mode buttons now consistently show white text when active
+
 ## v1.2.7 - Daily Disc Timezone Fix
 
 - Fixed daily disc to change at 12 AM EST instead of 12 AM UTC
